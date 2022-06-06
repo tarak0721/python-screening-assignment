@@ -32,3 +32,82 @@ f.truncate(0)
 f.writelines(l)
 f.close()
 print("Text successfully replaced")
+
+
+2.Demonstrate use of abstract class, multiple inheritance and decorator in
+python using examples
+# Python program showing
+# abstract base class work
+
+from abc import ABC, abstractmethod
+
+class Polygon(ABC):
+
+	@abstractmethod
+	def noofsides(self):
+		pass
+
+class Triangle(Polygon):
+
+	# overriding abstract method
+	def noofsides(self):
+		print("I have 3 sides")
+
+class Pentagon(Polygon):
+
+	# overriding abstract method
+	def noofsides(self):
+		print("I have 5 sides")
+
+class Hexagon(Polygon):
+
+	# overriding abstract method
+	def noofsides(self):
+		print("I have 6 sides")
+
+class Quadrilateral(Polygon):
+
+	# overriding abstract method
+	def noofsides(self):
+		print("I have 4 sides")
+
+# Driver code
+R = Triangle()
+R.noofsides()
+
+K = Quadrilateral()
+K.noofsides()
+
+R = Pentagon()
+R.noofsides()
+
+K = Hexagon()
+K.noofsides()
+#multiple inheritance in python
+Class Base1:
+       Body of the class
+
+Class Base2:
+     Body of the class
+
+Class Derived(Base1, Base2):
+     Body of the class
+     
+ #decorators in python
+A decorator in Python is a function that takes another function as its argument, and returns yet another function.
+
+def decorator_list(fnc):
+    def inner(list_of_tuples):
+        return [fnc(val[0], val[1]) for val in list_of_tuples]
+    return inner
+
+
+@decorator_list
+def add_together(a, b):
+    return a + b
+
+
+print(add_together([(1, 3), (3, 17), (5, 5), (6, 7)]))
+
+# add_together = decorator_list(add_together)
+ 
